@@ -504,7 +504,10 @@ export default function ProjectView({
             </p>
             <div className="w-full mt-4 flex flex-row gap-2 justify-center items-center">
               <div className="w-full flex flex-col justify-start items-center gap-4">
-                <Card className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-2">
+                <Card
+                  bg="#ffee69"
+                  className="w-fit h-fit border-1 border-black p-2"
+                >
                   <FaCalendarAlt className="w-6 h-6" />
                 </Card>
                 <div className="flex flex-col">
@@ -522,7 +525,10 @@ export default function ProjectView({
                 </div>
               </div>
               <div className="w-full flex flex-col justify-end items-center gap-4">
-                <Card className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-2">
+                <Card
+                  bg="#ffee69"
+                  className="w-fit h-fit border-1 border-black p-2"
+                >
                   <RiTeamFill className="w-6 h-6" />
                 </Card>
                 <div className="flex flex-col">
