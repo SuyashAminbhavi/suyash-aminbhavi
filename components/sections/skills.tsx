@@ -153,14 +153,7 @@ export default function MySkills() {
         {theme === "RETRO" && (
           <>
             {skillSet.map((category, index) => (
-              <Card
-                key={index + "_retro"}
-                // initial={{ opacity: 0, y: 30 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // transition={{ duration: 0.6, delay: index * 0.1 }}
-                // viewport={{ once: true }}
-                className="p-4"
-              >
+              <Card key={index + "_retro"} className="p-4">
                 <h3
                   className={
                     p2p_light.className +
