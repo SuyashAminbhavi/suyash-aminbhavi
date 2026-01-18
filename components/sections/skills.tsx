@@ -89,9 +89,22 @@ export default function MySkills() {
         viewport={{ once: true }}
         className="flex flex-row items-center gap-4 text-black"
       >
-        <Image src={SkillsAnim} height={60} width={60} alt="skills_animation" />
+        <Image
+          src={SkillsAnim}
+          height={60}
+          width={60}
+          alt="skills_animation"
+          className="hidden lg:visible"
+        />
         {theme === "MINIMALISTIC" && (
-          <h2 className={tillana_medium.className + " text-5xl"}>Skills</h2>
+          <h2
+            className={
+              tillana_medium.className +
+              " underline underline-2 underline-offset-4 decoration-yellow-400 text-3xl lg:text-5xl"
+            }
+          >
+            Skills
+          </h2>
         )}
         {theme === "RETRO" && (
           <h2 className={p2p_light.className + " text-3xl"}>Skills</h2>
@@ -108,7 +121,7 @@ export default function MySkills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-4"
+                className="py-2 lg:p-4"
               >
                 <h3
                   className={

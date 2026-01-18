@@ -205,70 +205,106 @@ export const FadeInDiv = ({
           className={cn("w-full absolute top-0 left-0", className)}
         >
           {theme === "MINIMALISTIC" && (
-            <div className="min-h-[40rem] max-h-[40rem] w-full mb-12 flex flex-col justify-start overflow-hidden relative rounded-2xl text-xl md:text-4xl font-bold text-black border-2 border-gray-100 shadow-xl bg-white">
+            <div className="min-h-[40rem] max-h-[40rem] w-full mb-12 flex flex-col justify-start overflow-y-auto relative rounded-2xl text-xl md:text-4xl font-bold text-black border-2 border-gray-100 shadow-xl bg-white">
               {!showProject &&
                 tab.projectList.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="w-full flex flex-row items-center justify-between p-8"
-                  >
-                    <div className="flex flex-row gap-6 items-center">
-                      <Image
-                        src={item.projectThumbnail}
-                        height={200}
-                        width={200}
-                        className="rounded-xl border-2 border-gray-100"
-                        alt="project_preview_img"
-                      />
-                      <div className="max-w-[30rem]">
-                        <h1
-                          key={idx}
-                          className={
-                            tilliana_light.className +
-                            " text-[1.5rem] underline underline-2 underline-offset-4 decoration-[#f9e864]"
-                          }
-                        >
-                          {item.projectTitle}
-                        </h1>
-                        <p
-                          className={
-                            lexend_light.className +
-                            " text-[1rem] leading-relaxed"
-                          }
-                        >
-                          {item.projectDescription}
-                        </p>
+                  <>
+                    <div
+                      key={idx + "_desktop"}
+                      className="hidden lg:visible w-full flex flex-row items-center justify-between p-8"
+                    >
+                      <div className="flex flex-row gap-6 items-center">
+                        <Image
+                          src={item.projectThumbnail}
+                          height={200}
+                          width={200}
+                          className="rounded-xl border-2 border-gray-100"
+                          alt="project_preview_img"
+                        />
+                        <div className="max-w-[30rem]">
+                          <h1
+                            key={idx}
+                            className={
+                              tilliana_light.className +
+                              " text-[1.5rem] underline underline-2 underline-offset-4 decoration-[#f9e864]"
+                            }
+                          >
+                            {item.projectTitle}
+                          </h1>
+                          <p
+                            className={
+                              lexend_light.className +
+                              " text-[1rem] leading-relaxed"
+                            }
+                          >
+                            {item.projectDescription}
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        {item.extendedProjectDetails.isProjectActive ? (
+                          <div
+                            className="flex flex-row gap-2 items-center hover:text-yellow-400"
+                            onClick={() => {
+                              setShowProject(true);
+                              setProject(item.extendedProjectDetails);
+                            }}
+                          >
+                            {" "}
+                            <IoNavigateCircleOutline className="w-8 h-8" />
+                            <p
+                              className={
+                                lexend_heavy.className + " text-[1rem]"
+                              }
+                            >
+                              Learn More
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="flex flex-row gap-2 items-center hover:text-red-600">
+                            <FaHourglassHalf className="w-5 h-5" />
+                            <p
+                              className={
+                                lexend_heavy.className + " text-[1rem]"
+                              }
+                            >
+                              Work In Progress
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <div>
-                      {item.extendedProjectDetails.isProjectActive ? (
-                        <div
-                          className="flex flex-row gap-2 items-center hover:text-yellow-400"
-                          onClick={() => {
-                            setShowProject(true);
-                            setProject(item.extendedProjectDetails);
-                          }}
-                        >
-                          {" "}
-                          <IoNavigateCircleOutline className="w-8 h-8" />
-                          <p
-                            className={lexend_heavy.className + " text-[1rem]"}
-                          >
-                            Learn More
-                          </p>
-                        </div>
-                      ) : (
-                        <div className="flex flex-row gap-2 items-center hover:text-red-600">
-                          <FaHourglassHalf className="w-5 h-5" />
-                          <p
-                            className={lexend_heavy.className + " text-[1rem]"}
-                          >
-                            Work In Progress
-                          </p>
-                        </div>
-                      )}
+                    <div
+                      key={idx + "_mobile"}
+                      className="w-full flex flex-col gap-4 items-start p-8 lg:hidden"
+                    >
+                      <Image
+                        src={item.projectThumbnail}
+                        width={200}
+                        height={200}
+                        alt="clearjar_preview"
+                      />
+                      <h1
+                        className={
+                          tilliana_light.className +
+                          " underline underline-2 underline-offset-4 decoration-yellow-400"
+                        }
+                      >
+                        {item.projectTitle}
+                      </h1>
+                      <div className={lexend_light.className + " text-sm"}>
+                        {item.projectDescription}
+                      </div>
+                      <button
+                        className={
+                          lexend_heavy.className +
+                          " w-full p-2 shadow-md bg-yellow-300/80 rounded-xl text-black text-sm"
+                        }
+                      >
+                        Learn More
+                      </button>
                     </div>
-                  </div>
+                  </>
                 ))}
               {showProject && displayProject(project)}
             </div>

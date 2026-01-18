@@ -52,15 +52,28 @@ export default function MyExperience() {
           " flex flex-row gap-4 justify-start items-center text-3xl min-[1260px]:text-5xl text-black"
         }
       >
-        <Image src={WorkAnim} height={60} width={60} alt="work_animation" />
+        <Image
+          src={WorkAnim}
+          height={60}
+          width={60}
+          alt="work_animation"
+          className="hidden lg:visible"
+        />
         {theme === "MINIMALISTIC" && (
-          <h2 className={tillana_medium.className + " text-5xl"}>Experience</h2>
+          <h2
+            className={
+              tillana_medium.className +
+              " underline underline-2 underline-offset-4 decoration-yellow-400 text-3xl lg:text-5xl"
+            }
+          >
+            Experience
+          </h2>
         )}
         {theme === "RETRO" && (
           <h2 className={p2p_light.className + " text-3xl"}>Experience</h2>
         )}
       </div>
-      <div className="flex flex-col gap-8 hide-scrollbar p-4">
+      <div className="flex flex-col gap-2 lg:gap-8 hide-scrollbar lg:p-4">
         {theme === "MINIMALISTIC" && (
           <>
             {experiences.map((item, idx) => (
@@ -68,13 +81,13 @@ export default function MyExperience() {
                 key={idx}
                 className="flex flex-row gap-8 justify-start items-center drop-shadow-xl rounded-md min-h-fit min-w-full py-6"
               >
-                <GoTriangleRight className="h-7 w-7 text-yellow-300" />
+                <GoTriangleRight className="h-7 w-7 text-yellow-300 hidden lg:visible" />
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col min-[1260px]:flex-row gap-4">
                     <h1
                       className={
                         tillana_medium.className +
-                        " text-3xl underline underline-offset-8 decoration-[#f9e864] px-2 w-fit"
+                        " text-3xl underline underline-offset-8 decoration-[#f9e864] lg:px-2 w-fit"
                       }
                     >
                       {item.company}

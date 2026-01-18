@@ -717,9 +717,17 @@ export default function MyProject() {
           height={60}
           width={60}
           alt="project_animation"
+          className="hidden lg:visible"
         />
         {theme === "MINIMALISTIC" && (
-          <h2 className={tillana_medium.className + " text-5xl"}>Projects</h2>
+          <h2
+            className={
+              tillana_medium.className +
+              " underline underline-2 underline-offset-4 decoration-yellow-400 text-3xl lg:text-5xl"
+            }
+          >
+            Projects
+          </h2>
         )}
         {theme === "RETRO" && (
           <h2 className={p2p_light.className + " text-3xl"}>Projects</h2>

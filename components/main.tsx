@@ -48,7 +48,7 @@ export default function Main() {
             key={component.id}
             id={component.id}
             className={
-              "relative px-[3rem] lg:px-[12rem] " + component.additionalClass
+              "relative px-[2rem] lg:px-[12rem] " + component.additionalClass
             }
           >
             {component.name}
