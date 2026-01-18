@@ -30,9 +30,10 @@ export default function ProjectView({
 }: Project) {
   const { theme } = use(ThemeContext);
   return (
-    <div className="w-full flex flex-col justify-start gap-10 p-8 overflow-hidden relative rounded-2xl text-4xl text-black">
+    <div className="w-full flex flex-col justify-start gap-10 p-6 lg:p-8 overflow-hidden relative rounded-2xl text-4xl text-black">
       {theme === "MINIMALISTIC" && (
         <>
+          {/*Desktop Layout*/}
           <div className="hidden lg:visible">
             <div className="flex flex-row justify-between items-start gap-8">
               <div className="flex flex-col gap-2">
@@ -163,7 +164,8 @@ export default function ProjectView({
               <FloatingDock items={technologiesUsed} />
             </div>
           </div>
-          <div className="flex flex-col lg:hidden">
+          {/*Mobile Layout*/}
+          <div className="flex flex-col gap-4 lg:hidden overflow-y-auto">
             <CardContainer className="inter-var">
               <CardBody className="bg-[#f9f9f9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-4 border">
                 <CardItem translateZ="100" className="w-full">
@@ -241,39 +243,39 @@ export default function ProjectView({
             >
               {projectDescription}
             </p>
-            <div className="w-full mt-4 flex flex-row gap-10 justify-start items-center">
-              <div className="flex flex-row items-center gap-4">
+            <div className="w-full mt-4 flex flex-row gap-2 justify-center items-center">
+              <div className="w-full flex flex-col justify-start items-center gap-4">
                 <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-2">
-                  <FaCalendarAlt className="w-2 h-2" />
+                  <FaCalendarAlt className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col">
                   <h1
                     className={
                       lexend_heavy.className +
-                      " text-[0.8rem] text-yellow-500 leading-tight"
+                      " text-[1rem] text-yellow-500 leading-tight"
                     }
                   >
                     Duration
                   </h1>
-                  <p className={lexend_light.className + " text-[0.7rem]"}>
+                  <p className={lexend_light.className + " text-[1rem]"}>
                     {projectDuration}
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row items-center gap-4">
+              <div className="w-full flex flex-col justify-end items-center gap-4">
                 <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-2">
-                  <RiTeamFill className="w-2 h-2" />
+                  <RiTeamFill className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col">
                   <h1
                     className={
                       lexend_heavy.className +
-                      " text-[0.8rem] text-yellow-500 leading-tight"
+                      " text-[1rem] text-yellow-500 leading-tight"
                     }
                   >
                     Team Size
                   </h1>
-                  <p className={lexend_light.className + " text-[0.7rem]"}>
+                  <p className={lexend_light.className + " text-[1rem]"}>
                     {projectTeamSize}
                   </p>
                 </div>
@@ -288,7 +290,13 @@ export default function ProjectView({
               >
                 Technologies Used
               </div>
-              <FloatingDock items={technologiesUsed} />
+              <div className="w-full flex flex-row flex-wrap gap-4">
+                {technologiesUsed.map((technology, idx) => (
+                  <div key={idx} className="h-6 w-6">
+                    {technology.icon}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </>
