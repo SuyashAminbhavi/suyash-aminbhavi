@@ -296,6 +296,10 @@ export const FadeInDiv = ({
                         {item.projectDescription}
                       </div>
                       <button
+                        onClick={() => {
+                          setShowProject(true);
+                          setProject(item.extendedProjectDetails);
+                        }}
                         className={
                           lexend_heavy.className +
                           " w-full p-2 shadow-md bg-yellow-300/80 rounded-xl text-black text-sm"

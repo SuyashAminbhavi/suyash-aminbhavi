@@ -33,62 +33,139 @@ export default function ProjectView({
     <div className="w-full flex flex-col justify-start gap-10 p-8 overflow-hidden relative rounded-2xl text-4xl text-black">
       {theme === "MINIMALISTIC" && (
         <>
-          <div className="flex flex-row justify-between items-start gap-8">
-            <div className="flex flex-col gap-2">
-              <div>
-                <h1
-                  className={
-                    tillana_medium.className +
-                    " underline underline-2 underline-offset-4 decoration-[#f9e864] text-[1.5rem]"
-                  }
-                >
-                  {projectName}
-                </h1>
-                <p className={lexend_light.className + " text-[1rem] mt-2"}>
-                  {projectDescription}
-                </p>
-              </div>
-              <div className="w-full mt-4 flex flex-row gap-10 justify-start items-center">
-                <div className="flex flex-row items-center gap-4">
-                  <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-3">
-                    <FaCalendarAlt className="w-5 h-5" />
+          <div className="hidden lg:visible">
+            <div className="flex flex-row justify-between items-start gap-8">
+              <div className="flex flex-col gap-2">
+                <div>
+                  <h1
+                    className={
+                      tillana_medium.className +
+                      " underline underline-2 underline-offset-4 decoration-[#f9e864] text-[1.5rem]"
+                    }
+                  >
+                    {projectName}
+                  </h1>
+                  <p className={lexend_light.className + " text-[1rem] mt-2"}>
+                    {projectDescription}
+                  </p>
+                </div>
+                <div className="w-full mt-4 flex flex-row gap-10 justify-start items-center">
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-3">
+                      <FaCalendarAlt className="w-5 h-5" />
+                    </div>
+                    <div className="flex flex-col">
+                      <h1
+                        className={
+                          lexend_heavy.className +
+                          " text-[1rem] text-yellow-500 leading-tight"
+                        }
+                      >
+                        Duration
+                      </h1>
+                      <p className={lexend_light.className + " text-[1.3rem]"}>
+                        {projectDuration}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <h1
-                      className={
-                        lexend_heavy.className +
-                        " text-[1rem] text-yellow-500 leading-tight"
-                      }
-                    >
-                      Duration
-                    </h1>
-                    <p className={lexend_light.className + " text-[1.3rem]"}>
-                      {projectDuration}
-                    </p>
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-3">
+                      <RiTeamFill className="w-5 h-5" />
+                    </div>
+                    <div className="flex flex-col">
+                      <h1
+                        className={
+                          lexend_heavy.className +
+                          " text-[1rem] text-yellow-500 leading-tight"
+                        }
+                      >
+                        Team Size
+                      </h1>
+                      <p className={lexend_light.className + " text-[1.3rem]"}>
+                        {projectTeamSize}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex flex-row items-center gap-4">
-                  <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-3">
-                    <RiTeamFill className="w-5 h-5" />
-                  </div>
-                  <div className="flex flex-col">
-                    <h1
-                      className={
-                        lexend_heavy.className +
-                        " text-[1rem] text-yellow-500 leading-tight"
-                      }
-                    >
-                      Team Size
-                    </h1>
-                    <p className={lexend_light.className + " text-[1.3rem]"}>
-                      {projectTeamSize}
-                    </p>
-                  </div>
-                </div>
               </div>
+              <CardContainer className="inter-var">
+                <CardBody className="bg-[#f9f9f9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+                  <CardItem translateZ="100" className="w-full">
+                    <Image
+                      src={projectPreviewImg}
+                      height="1000"
+                      width="1000"
+                      className="h-fit w-full border-[0.8rem] border-white object-cover rounded-xl group-hover/card:shadow-xl"
+                      alt="thumbnail"
+                    />
+                  </CardItem>
+                  <div className="flex flex-row items-center mt-4">
+                    {projectLiveLink !== "N/A" && (
+                      <CardItem
+                        translateZ={20}
+                        as="a"
+                        href={projectLiveLink}
+                        target="__blank"
+                        className={
+                          lexend_heavy.className +
+                          " rounded-xl text-[1rem] font-normal hover:text-yellow-400 dark:text-white"
+                        }
+                      >
+                        View Live
+                      </CardItem>
+                    )}
+                    {projectDemoLink !== "N/A" && projectLiveLink !== "N/A" ? (
+                      <LuDot width={5} height={5} />
+                    ) : (
+                      <></>
+                    )}
+                    {projectDemoLink !== "N/A" && (
+                      <>
+                        <Link
+                          href={projectDemoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={
+                            lexend_heavy.className +
+                            " text-[1rem] hover:text-yellow-400"
+                          }
+                        >
+                          Watch Demo
+                        </Link>
+                      </>
+                    )}
+                    {!isProjectActive && (
+                      <div className="flex flex-row gap-2">
+                        <Image
+                          width={40}
+                          height={40}
+                          src={WorkInProgressAnim}
+                          alt="work_in_progress"
+                        />
+                        <p className={lexend_heavy.className + " text-[1rem]"}>
+                          Work In Progress
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </CardBody>
+              </CardContainer>
             </div>
+            <div className="flex flex-col gap-6">
+              <div
+                className={
+                  tillana_medium.className +
+                  " underline underline-2 underline-offset-4 decoration-[#f9e864] text-[1.5rem]"
+                }
+              >
+                Technologies Used
+              </div>
+              <FloatingDock items={technologiesUsed} />
+            </div>
+          </div>
+          <div className="flex flex-col lg:hidden">
             <CardContainer className="inter-var">
-              <CardBody className="bg-[#f9f9f9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+              <CardBody className="bg-[#f9f9f9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-4 border">
                 <CardItem translateZ="100" className="w-full">
                   <Image
                     src={projectPreviewImg}
@@ -107,7 +184,7 @@ export default function ProjectView({
                       target="__blank"
                       className={
                         lexend_heavy.className +
-                        " rounded-xl text-[1rem] font-normal hover:text-yellow-400 dark:text-white"
+                        " rounded-xl text-[0.7rem] lg:text-[1rem] font-normal hover:text-yellow-400 dark:text-white"
                       }
                     >
                       View Live
@@ -126,7 +203,7 @@ export default function ProjectView({
                         rel="noopener noreferrer"
                         className={
                           lexend_heavy.className +
-                          " text-[1rem] hover:text-yellow-400"
+                          " text-[0.7rem] lg:text-[1rem] hover:text-yellow-400"
                         }
                       >
                         Watch Demo
@@ -149,17 +226,70 @@ export default function ProjectView({
                 </div>
               </CardBody>
             </CardContainer>
-          </div>
-          <div className="flex flex-col gap-6">
-            <div
+            <h1
               className={
                 tillana_medium.className +
-                " underline underline-2 underline-offset-4 decoration-[#f9e864] text-[1.5rem]"
+                " underline underline-2 underline-offset-4 decoration-yellow-400 text-[1rem]"
               }
             >
-              Technologies Used
+              {projectName}
+            </h1>
+            <p
+              className={
+                lexend_light.className + " inline-block text-[0.8rem] leading-6"
+              }
+            >
+              {projectDescription}
+            </p>
+            <div className="w-full mt-4 flex flex-row gap-10 justify-start items-center">
+              <div className="flex flex-row items-center gap-4">
+                <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-2">
+                  <FaCalendarAlt className="w-2 h-2" />
+                </div>
+                <div className="flex flex-col">
+                  <h1
+                    className={
+                      lexend_heavy.className +
+                      " text-[0.8rem] text-yellow-500 leading-tight"
+                    }
+                  >
+                    Duration
+                  </h1>
+                  <p className={lexend_light.className + " text-[0.7rem]"}>
+                    {projectDuration}
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row items-center gap-4">
+                <div className="w-fit h-fit border-1 border-black bg-[#ffee69] rounded-md p-2">
+                  <RiTeamFill className="w-2 h-2" />
+                </div>
+                <div className="flex flex-col">
+                  <h1
+                    className={
+                      lexend_heavy.className +
+                      " text-[0.8rem] text-yellow-500 leading-tight"
+                    }
+                  >
+                    Team Size
+                  </h1>
+                  <p className={lexend_light.className + " text-[0.7rem]"}>
+                    {projectTeamSize}
+                  </p>
+                </div>
+              </div>
             </div>
-            <FloatingDock items={technologiesUsed} />
+            <div className="flex flex-col gap-6">
+              <div
+                className={
+                  tillana_medium.className +
+                  " underline underline-2 underline-offset-4 decoration-[#f9e864] text-[1rem]"
+                }
+              >
+                Technologies Used
+              </div>
+              <FloatingDock items={technologiesUsed} />
+            </div>
           </div>
         </>
       )}
