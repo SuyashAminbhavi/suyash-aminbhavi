@@ -211,7 +211,7 @@ export const FadeInDiv = ({
                   <>
                     <div
                       key={idx + "_desktop"}
-                      className="hidden lg:visible w-full flex flex-row items-center justify-between p-8"
+                      className="hidden lg:flex w-full flex-row items-center justify-between p-8"
                     >
                       <div className="flex flex-row gap-6 items-center">
                         <Image

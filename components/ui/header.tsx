@@ -42,12 +42,12 @@ export default function Header() {
               onClick={() => setShowContact(!showContact)}
               className={
                 hankeng_light.className +
-                " text-[1rem] hidden lg:visible border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg"
+                " text-[1rem] hidden lg:inline-block border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg"
               }
             >
               Contact Me
             </button>
-            <button className="flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg">
+            <button className="lg:hidden flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg">
               <IoIosCall className="h-4 w-4 text-yellow-900" />
             </button>
           </>
@@ -96,13 +96,13 @@ export default function Header() {
               <button
                 className={
                   hankeng_light.className +
-                  " hidden lg:visible text-[1rem] flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg"
+                  " hidden lg:flex text-[1rem] flex-row gap-4 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg"
                 }
               >
                 <FaDownload className="h-4 w-4 text-yellow-900" />
                 Resume
               </button>
-              <button className="flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg">
+              <button className="lg:hidden flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg">
                 <FaDownload className="h-4 w-4 text-yellow-900" />
               </button>
             </>

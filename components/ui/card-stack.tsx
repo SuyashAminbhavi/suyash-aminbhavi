@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Hanken_Grotesk, Orbitron } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import { Card } from "pixel-retroui";
 
 let interval: any;
@@ -33,7 +33,7 @@ export const CardStack = ({
           key={card.id}
           className={
             hankeng_light.className +
-            " mt-8 dark:bg-black bg-white h-fit w-full rounded-3xl p-8 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col gap-8 lg:gap-0 justify-between"
+            " mt-8 dark:bg-black bg-white h-fit w-full rounded-3xl p-8 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col gap-8 justify-between"
           }
           style={{
             transformOrigin: "top center",

@@ -34,7 +34,7 @@ export default function ProjectView({
       {theme === "MINIMALISTIC" && (
         <>
           {/*Desktop Layout*/}
-          <div className="hidden lg:visible">
+          <div className="hidden lg:block">
             <div className="flex flex-row justify-between items-start gap-8">
               <div className="flex flex-col gap-2">
                 <div>

@@ -23,7 +23,7 @@ export default function MyEducation() {
           height={60}
           width={60}
           alt="education_animation"
-          className="hidden lg:visible"
+          className="hidden lg:inline-block"
         />
         {theme === "MINIMALISTIC" && (
           <h2
@@ -42,7 +42,7 @@ export default function MyEducation() {
       <div className="flex flex-col gap-8 lg:p-4 hide-scrollbar">
         {theme === "MINIMALISTIC" && (
           <motion.div className="flex flex-row gap-8 justify-start items-center drop-shadow-xl rounded-md min-h-fit min-w-full py-6">
-            <GoTriangleRight className="h-7 w-7 text-yellow-300 hidden lg:visible" />
+            <GoTriangleRight className="h-7 w-7 text-yellow-300 hidden lg:inline-block" />
             <div className="flex flex-col gap-5">
               <div className="flex flex-col min-[1260px]:flex-row gap-4">
                 <div
@@ -57,7 +57,7 @@ export default function MyEducation() {
                   <div
                     className={
                       tillana_medium.className +
-                      " text-md text-white bg-black rounded-sm py-1 px-2 w-fit"
+                      " text-sm lg:text-md text-white bg-black rounded-sm py-1 px-2 w-fit"
                     }
                   >
                     Bachelors in Computer Science

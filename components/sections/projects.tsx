@@ -717,7 +717,7 @@ export default function MyProject() {
           height={60}
           width={60}
           alt="project_animation"
-          className="hidden lg:visible"
+          className="hidden lg:block"
         />
         {theme === "MINIMALISTIC" && (
           <h2

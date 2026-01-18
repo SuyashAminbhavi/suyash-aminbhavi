@@ -94,7 +94,7 @@ export default function MySkills() {
           height={60}
           width={60}
           alt="skills_animation"
-          className="hidden lg:visible"
+          className="hidden lg:inline-block"
         />
         {theme === "MINIMALISTIC" && (
           <h2
