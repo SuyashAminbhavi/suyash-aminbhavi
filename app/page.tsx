@@ -135,7 +135,7 @@ export default function Home() {
       {/* Text Animation Layer */}
       {animationStage !== "main" && (
         <motion.div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center overflow-hidden"
           initial={{ opacity: 1, scale: 1 }}
           animate={{
             opacity: animationStage === "transition" ? 0 : 1,
