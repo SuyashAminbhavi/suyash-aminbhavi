@@ -118,7 +118,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-full">
       {/* Background layer with color transition */}
       <motion.div
         className="absolute inset-0"
