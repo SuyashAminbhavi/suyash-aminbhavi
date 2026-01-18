@@ -54,13 +54,22 @@ export default function Header() {
         )}
 
         {theme === "RETRO" && (
-          <Button
-            onClick={() => setShowContact(!showContact)}
-            bg="#f9e864"
-            className="text-[1rem] flex flex-row gap-2"
-          >
-            Contact Me
-          </Button>
+          <>
+            <Button
+              onClick={() => setShowContact(!showContact)}
+              bg="#f9e864"
+              className="text-[1rem] hidden lg:flex flex-row gap-2"
+            >
+              Contact Me
+            </Button>
+            <Button
+              onClick={() => setShowContact(!showContact)}
+              bg="#f9e864"
+              className="text-[1rem] lg:hidden flex flex-row gap-2"
+            >
+              <IoIosCall className="h-8 w-8 text-black" />
+            </Button>
+          </>
         )}
 
         <AnimatePresence initial={false}>
@@ -108,13 +117,21 @@ export default function Header() {
             </>
           )}
           {theme === "RETRO" && (
-            <Button
-              bg="#f9e864"
-              className="text-[1rem] flex flex-row gap-2 items-center"
-            >
-              <FaDownload className="h-4 w-4" />
-              Resume
-            </Button>
+            <>
+              <Button
+                bg="#f9e864"
+                className="text-[1rem] hidden lg:flex flex-row gap-2 items-center"
+              >
+                <FaDownload className="h-4 w-4" />
+                Resume
+              </Button>
+              <Button
+                bg="#f9e864"
+                className="text-[1rem] lg:hidden flex flex-row gap-2 items-center"
+              >
+                <FaDownload className="h-8 w-8 text-black" />
+              </Button>
+            </>
           )}
         </a>
       </div>

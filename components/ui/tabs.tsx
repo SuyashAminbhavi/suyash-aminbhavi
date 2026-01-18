@@ -12,7 +12,7 @@ import { IoNavigateCircleOutline } from "react-icons/io5";
 import { Lexend, Press_Start_2P, Tillana } from "next/font/google";
 import Image from "next/image";
 import { ThemeContext } from "@/contexts/themeContext";
-import { Button, Card } from "pixel-retroui";
+import { Button, ButtonStyles, Card } from "pixel-retroui";
 
 const tilliana_light = Tillana({ weight: "500", subsets: ["latin"] });
 const lexend_light = Lexend({ weight: "300", subsets: ["latin"] });
@@ -209,8 +209,9 @@ export const FadeInDiv = ({
               {!showProject &&
                 tab.projectList.map((item, idx) => (
                   <>
+                    {/*Desktop Layout*/}
                     <div
-                      key={idx + "_desktop"}
+                      key={idx + "_desktop_minimalistic"}
                       className="hidden lg:flex w-full flex-row items-center justify-between p-8"
                     >
                       <div className="flex flex-row gap-6 items-center">
@@ -223,7 +224,7 @@ export const FadeInDiv = ({
                         />
                         <div className="max-w-[30rem]">
                           <h1
-                            key={idx}
+                            key={idx + "_desktop_minimalistic"}
                             className={
                               tilliana_light.className +
                               " text-[1.5rem] underline underline-2 underline-offset-4 decoration-[#f9e864]"
@@ -274,9 +275,10 @@ export const FadeInDiv = ({
                         )}
                       </div>
                     </div>
+                    {/*Mobile Layout*/}
                     <div
-                      key={idx + "_mobile"}
-                      className="w-full flex flex-col gap-4 items-start p-8 lg:hidden"
+                      key={idx + "_mobile_minimalistic"}
+                      className="w-full lg:hidden flex flex-col gap-4 items-start p-8"
                     >
                       <Image
                         src={item.projectThumbnail}
@@ -295,18 +297,33 @@ export const FadeInDiv = ({
                       <div className={lexend_light.className + " text-sm"}>
                         {item.projectDescription}
                       </div>
-                      <button
-                        onClick={() => {
-                          setShowProject(true);
-                          setProject(item.extendedProjectDetails);
-                        }}
-                        className={
-                          lexend_heavy.className +
-                          " w-full p-2 shadow-md bg-yellow-300/80 rounded-xl text-black text-sm"
-                        }
-                      >
-                        Learn More
-                      </button>
+                      <div className="w-full">
+                        {item.extendedProjectDetails.isProjectActive ? (
+                          <button
+                            className={
+                              lexend_heavy.className +
+                              " w-full text-[1rem] gap-2 items-center bg-yellow-300/80 p-2 rounded-xl"
+                            }
+                            onClick={() => {
+                              setShowProject(true);
+                              setProject(item.extendedProjectDetails);
+                            }}
+                          >
+                            Learn More
+                          </button>
+                        ) : (
+                          <div className="w-full flex flex-row gap-2 justify-center items-center">
+                            <FaHourglassHalf className="w-5 h-5" />
+                            <p
+                              className={
+                                lexend_heavy.className + " text-[1rem]"
+                              }
+                            >
+                              Work In Progress
+                            </p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </>
                 ))}
@@ -314,14 +331,72 @@ export const FadeInDiv = ({
             </div>
           )}
           {theme === "RETRO" && (
-            <Card className="min-h-[40rem] mb-12 w-full">
+            <Card className="min-h-[40rem] max-h-[40rem] mb-12 w-full overflow-y-auto">
               {!showProject &&
                 tab.projectList.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="w-full flex flex-row items-center justify-between p-8"
-                  >
-                    <div className="flex flex-row gap-6 items-center">
+                  <>
+                    {/*Desktop Layout*/}
+                    <div
+                      key={idx + "_desktop_retro"}
+                      className="w-full hidden lg:flex flex-row items-center justify-between p-8"
+                    >
+                      <div className="flex flex-row gap-6 items-center">
+                        <Image
+                          src={item.projectThumbnail}
+                          height={200}
+                          width={200}
+                          className="rounded-xl border-2 border-gray-100"
+                          alt="project_preview_img"
+                        />
+                        <div className="flex flex-col gap-2 max-w-[30rem]">
+                          <h1
+                            key={idx + "_desktop_retro"}
+                            className={
+                              p2p_light.className +
+                              " text-yellow-800 text-[1rem]"
+                            }
+                          >
+                            {item.projectTitle}
+                          </h1>
+                          <p className="retroui-text text-[1rem] text-black leading-relaxed">
+                            {item.projectDescription}
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        {item.extendedProjectDetails.isProjectActive ? (
+                          <div
+                            className="flex flex-row gap-2 items-center hover:text-yellow-400"
+                            onClick={() => {
+                              setShowProject(true);
+                              setProject(item.extendedProjectDetails);
+                            }}
+                          >
+                            {" "}
+                            <IoNavigateCircleOutline className="w-8 h-8" />
+                            <p
+                              className={p2p_light.className + " text-[0.8rem]"}
+                            >
+                              Learn More
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="flex flex-row gap-2 items-center hover:text-red-600">
+                            <FaHourglassHalf className="w-5 h-5" />
+                            <p
+                              className={p2p_light.className + " text-[0.7rem]"}
+                            >
+                              Work In Progress
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    {/*Mobile Layout*/}
+                    <div
+                      key={idx + "_mobile_retro"}
+                      className="w-full lg:hidden flex flex-col gap-2 items-start p-8"
+                    >
                       <Image
                         src={item.projectThumbnail}
                         height={200}
@@ -329,37 +404,32 @@ export const FadeInDiv = ({
                         className="rounded-xl border-2 border-gray-100"
                         alt="project_preview_img"
                       />
-                      <div className="flex flex-col gap-2 max-w-[30rem]">
-                        <h1
-                          key={idx}
-                          className={
-                            p2p_light.className + " text-yellow-800 text-[1rem]"
-                          }
-                        >
-                          {item.projectTitle}
-                        </h1>
-                        <p className="retroui-text text-[1rem] text-black leading-relaxed">
-                          {item.projectDescription}
-                        </p>
+                      <h1
+                        key={idx + "_mobile_retro"}
+                        className={
+                          p2p_light.className + " text-yellow-800 text-[0.7rem]"
+                        }
+                      >
+                        {item.projectTitle}
+                      </h1>
+                      <div className="retroui-text text-[0.6rem] text-black leading-tight">
+                        {item.projectDescription}
                       </div>
                     </div>
-                    <div>
+                    <div className="w-full">
                       {item.extendedProjectDetails.isProjectActive ? (
-                        <div
-                          className="flex flex-row gap-2 items-center hover:text-yellow-400"
+                        <Button
+                          bg="#fde047"
+                          className="min-w-[17rem] flex flex-row text-[0.8rem] gap-2 justify-center items-center hover:text-yellow-400"
                           onClick={() => {
                             setShowProject(true);
                             setProject(item.extendedProjectDetails);
                           }}
                         >
-                          {" "}
-                          <IoNavigateCircleOutline className="w-8 h-8" />
-                          <p className={p2p_light.className + " text-[0.8rem]"}>
-                            Learn More
-                          </p>
-                        </div>
+                          Learn More
+                        </Button>
                       ) : (
-                        <div className="flex flex-row gap-2 items-center hover:text-red-600">
+                        <div className="w-full flex flex-row gap-2 justify-center items-center hover:text-red-600">
                           <FaHourglassHalf className="w-5 h-5" />
                           <p className={p2p_light.className + " text-[0.7rem]"}>
                             Work In Progress
@@ -367,7 +437,7 @@ export const FadeInDiv = ({
                         </div>
                       )}
                     </div>
-                  </div>
+                  </>
                 ))}
               {showProject && displayProject(project)}
             </Card>

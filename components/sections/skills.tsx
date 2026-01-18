@@ -107,16 +107,18 @@ export default function MySkills() {
           </h2>
         )}
         {theme === "RETRO" && (
-          <h2 className={p2p_light.className + " text-3xl"}>Skills</h2>
+          <h2 className={p2p_light.className + " text-2xl lg:text-3xl"}>
+            Skills
+          </h2>
         )}
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-4 lg:p-4">
         {theme === "MINIMALISTIC" && (
           <>
             {skillSet.map((category, index) => (
               <motion.div
-                key={index}
+                key={index + "_minimalistic"}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -134,7 +136,7 @@ export default function MySkills() {
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <span
-                      key={skill}
+                      key={skill + "_minimalistic"}
                       className={
                         hankeng_light.className +
                         " text-sm bg-[#f9e864]/50 text-yellow-800 px-3 py-1 rounded-full shadow-sm hover:bg-[#f9e864] transition-all"
@@ -152,7 +154,7 @@ export default function MySkills() {
           <>
             {skillSet.map((category, index) => (
               <Card
-                key={index}
+                key={index + "_retro"}
                 // initial={{ opacity: 0, y: 30 }}
                 // whileInView={{ opacity: 1, y: 0 }}
                 // transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -170,7 +172,7 @@ export default function MySkills() {
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <span
-                      key={skill}
+                      key={skill + "_retro"}
                       className={
                         p2p_light.className +
                         " text-[0.7rem] bg-[#f9e864]/50 text-yellow-800 px-3 py-1 rounded-full shadow-sm hover:bg-[#f9e864] transition-all"

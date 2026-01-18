@@ -70,7 +70,9 @@ export default function MyExperience() {
           </h2>
         )}
         {theme === "RETRO" && (
-          <h2 className={p2p_light.className + " text-3xl"}>Experience</h2>
+          <h2 className={p2p_light.className + " text-2xl lg:text-3xl"}>
+            Experience
+          </h2>
         )}
       </div>
       <div className="flex flex-col gap-2 lg:gap-8 hide-scrollbar lg:p-4">
@@ -78,7 +80,7 @@ export default function MyExperience() {
           <>
             {experiences.map((item, idx) => (
               <motion.div
-                key={idx}
+                key={idx + "_minimalistic"}
                 className="flex flex-row gap-8 justify-start items-center drop-shadow-xl rounded-md min-h-fit min-w-full py-6"
               >
                 <GoTriangleRight className="h-7 w-7 text-yellow-300 hidden lg:block" />
@@ -123,12 +125,12 @@ export default function MyExperience() {
           <>
             {experiences.map((item, idx) => (
               <motion.div
-                key={idx}
+                key={idx + "_retro"}
                 className="flex flex-row gap-8 justify-start items-center drop-shadow-xl rounded-md min-h-fit min-w-full py-6"
               >
-                <GoTriangleRight className="h-7 w-7 text-yellow-300" />
+                <GoTriangleRight className="h-7 w-7 text-yellow-300 hidden lg:block" />
                 <div className="flex flex-col gap-6">
-                  <div className="flex flex-row gap-4">
+                  <div className="flex flex-col gap-4">
                     <h1
                       className={
                         p2p_light.className +
@@ -142,7 +144,7 @@ export default function MyExperience() {
                     <div
                       className={
                         p2p_light.className +
-                        " text-[0.7rem] text-white bg-black rounded-sm p-2 h-fit w-fit"
+                        " text-[0.5rem] lg:text-[0.7rem] text-white bg-black rounded-sm p-2 h-fit w-fit"
                       }
                     >
                       {item.jobTitle}
@@ -152,7 +154,7 @@ export default function MyExperience() {
                     <div
                       className={
                         p2p_light.className +
-                        " text-[0.7rem] flex flex-row justify-start items-center gap-2 text-gray-500 px-2"
+                        " text-[0.5rem] lg:text-[0.7rem] flex flex-row justify-start items-center gap-2 text-gray-500 px-2"
                       }
                     >
                       <span>{item.startDate}</span>

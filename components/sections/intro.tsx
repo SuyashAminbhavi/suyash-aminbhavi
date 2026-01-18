@@ -50,7 +50,7 @@ export default function MyIntro() {
           <h1
             className={
               p2p_light.className +
-              " flex flex-row gap-2 justify-start items-center text-2xl lg:text-4xl text-black underline underline-offset-4 decoration-[#f9e864]"
+              " flex flex-row gap-2 justify-start items-center text-3xl lg:text-4xl text-black underline underline-offset-4 decoration-[#f9e864]"
             }
           >
             Suyash Aminbhavi

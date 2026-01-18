@@ -36,7 +36,9 @@ export default function MyEducation() {
           </h2>
         )}
         {theme === "RETRO" && (
-          <h2 className={p2p_light.className + " text-3xl"}>Education</h2>
+          <h2 className={p2p_light.className + " text-2xl lg:text-3xl"}>
+            Education
+          </h2>
         )}
       </div>
       <div className="flex flex-col gap-8 lg:p-4 hide-scrollbar">
@@ -79,9 +81,9 @@ export default function MyEducation() {
         )}
         {theme === "RETRO" && (
           <motion.div className="flex flex-row gap-8 justify-start items-center drop-shadow-xl rounded-md min-h-fit min-w-full py-6">
-            <GoTriangleRight className="h-7 w-7 text-yellow-300" />
+            <GoTriangleRight className="h-7 w-7 text-yellow-300 hidden lg:block" />
             <div className="flex flex-col gap-6">
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-col gap-4">
                 <div
                   className={
                     p2p_light.className +
@@ -104,7 +106,7 @@ export default function MyEducation() {
               <div
                 className={
                   p2p_light.className +
-                  " text-[0.7rem] flex flex-row justify-start items-center gap-2 text-gray-500 px-2"
+                  " text-[0.5rem] lg:text-[0.7rem] flex flex-row justify-start items-center gap-2 text-gray-500 px-2"
                 }
               >
                 <span>September 2020</span>
