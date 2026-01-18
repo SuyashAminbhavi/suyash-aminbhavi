@@ -12,7 +12,7 @@ export default function Main() {
     {
       name: <MyIntro />,
       id: "my-intro",
-      additionalClass: " flex flex-col",
+      additionalClass: "flex flex-col",
     },
     {
       name: <MySkills />,
@@ -47,7 +47,9 @@ export default function Main() {
           <section
             key={component.id}
             id={component.id}
-            className={"relative px-[12rem]" + component.additionalClass}
+            className={
+              "relative px-[3rem] lg:px-[12rem] " + component.additionalClass
+            }
           >
             {component.name}
           </section>

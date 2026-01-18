@@ -242,7 +242,7 @@ export default function Home() {
               >
                 Choose an experience
               </h1>
-              <div className="flex flex-col lg:flex-row items-center justify-center w-[20rem] h-1/2 lg:h-full lg:w-full gap-4 mx-auto px-8">
+              <div className="flex flex-col lg:flex-row items-center justify-center w-[20rem] h-1/2 lg:h-fit lg:w-full gap-4 mx-auto px-8">
                 <Card
                   title="MINIMALISTIC"
                   titleStyle={inter_light}
