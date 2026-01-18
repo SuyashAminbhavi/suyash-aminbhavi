@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="relative top-0 left-0 right-0 p-6 flex flex-row justify-between items-center text-5xl text-black">
       {theme === "MINIMALISTIC" && (
-        <span className={bonbon_medium.className + " text-[2.5rem]"}>SA</span>
+        <span className={bonbon_medium.className + " text-[3.5rem]"}>SA</span>
       )}
       {theme === "RETRO" && (
         <span className={p2p_light.className + " text-[2.5rem]"}>SA</span>
@@ -55,7 +55,7 @@ export default function Header() {
               onClick={() => setTheme("RETRO")}
               className="lg:hidden flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg"
             >
-              <TbSwitch2 className="h-4 w-4 text-yellow-900" />
+              <TbSwitch2 className="h-6 w-6 text-yellow-900" />
             </button>
           </>
         )}
@@ -95,7 +95,7 @@ export default function Header() {
               onClick={() => setShowContact(!showContact)}
               className="lg:hidden flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg"
             >
-              <IoIosCall className="h-4 w-4 text-yellow-900" />
+              <IoIosCall className="h-6 w-6 text-yellow-900" />
             </button>
           </>
         )}
@@ -185,7 +185,7 @@ export default function Header() {
                 Resume
               </button>
               <button className="lg:hidden flex flex-row gap-3 items-center border-2 border-yellow-200 bg-yellow-100 text-yellow-900 hover:shadow-xl hover:shadow-[#f9e864]/50 px-4 py-2 rounded-lg">
-                <FaDownload className="h-4 w-4 text-yellow-900" />
+                <FaDownload className="h-6 w-6 text-yellow-900" />
               </button>
             </>
           )}
