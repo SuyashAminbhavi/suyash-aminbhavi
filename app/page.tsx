@@ -176,6 +176,10 @@ export default function Home() {
               textAnchor="middle"
               dominantBaseline="middle"
               className="welcome-text"
+              style={{
+                fontFamily: "'Poppins', serif",
+                fontSize: "clamp(50px, 10vw, 100px)",
+              }}
               initial={{
                 strokeDasharray: 1000,
                 strokeDashoffset: 1000,
@@ -204,7 +208,7 @@ export default function Home() {
               dominantBaseline="middle"
               style={{
                 fontFamily: "'Poppins', serif",
-                fontSize: "100px",
+                fontSize: "clamp(50px, 10vw, 100px)",
                 fill: "#000000",
               }}
               initial={{ opacity: 0 }}
@@ -259,23 +263,13 @@ export default function Home() {
                   {/* Radial gradient for the cute fade */}
                   <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
                 </Card>
-                {/* <Card
-                  title="FUTURISTIC"
-                  titleStyle={orbitron_light}
-                  icon={<BsRobot className="w-14 h-14" />}
-                >
-                  <CanvasRevealEffect
-                    animationSpeed={3}
-                    containerClassName="bg-sky-600"
-                    colors={[[125, 211, 252]]}
-                  />
-                </Card> */}
               </div>
             </main>
           }
         </motion.div>
       )}
-      {animationStage === "main" && <Main />}
+      {animationStage === "main" &&
+        (theme === "MINIMALISTIC" || theme === "RETRO") && <Main />}
     </div>
   );
 }
