@@ -33,7 +33,8 @@ export default function Header() {
       )}
       <div
         className={
-          lexend_medium.className + " flex flex-row gap-6 text-xl text-black"
+          lexend_medium.className +
+          " flex flex-row gap-2 lg:gap-6 text-xl text-black"
         }
       >
         {theme === "MINIMALISTIC" && (
@@ -67,7 +68,7 @@ export default function Header() {
               bg="#f9e864"
               className="text-[1rem] lg:hidden flex flex-row gap-2"
             >
-              <IoIosCall className="h-8 w-8 text-black" />
+              <IoIosCall className="h-6 w-6 text-black" />
             </Button>
           </>
         )}
@@ -129,7 +130,7 @@ export default function Header() {
                 bg="#f9e864"
                 className="text-[1rem] lg:hidden flex flex-row gap-2 items-center"
               >
-                <FaDownload className="h-8 w-8 text-black" />
+                <FaDownload className="h-6 w-6 text-black" />
               </Button>
             </>
           )}
