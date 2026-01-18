@@ -395,7 +395,7 @@ export const FadeInDiv = ({
                     {/*Mobile Layout*/}
                     <div
                       key={idx + "_mobile_retro"}
-                      className="w-full lg:hidden flex flex-col gap-2 items-start p-8"
+                      className="w-full lg:hidden flex flex-col gap-1 items-start p-8"
                     >
                       <Image
                         src={item.projectThumbnail}
@@ -412,7 +412,7 @@ export const FadeInDiv = ({
                       >
                         {item.projectTitle}
                       </h1>
-                      <div className="retroui-text text-[0.6rem] text-black leading-tight">
+                      <div className="retroui-text text-[0.8rem] text-black leading-tight">
                         {item.projectDescription}
                       </div>
                     </div>
@@ -420,7 +420,7 @@ export const FadeInDiv = ({
                       {item.extendedProjectDetails.isProjectActive ? (
                         <Button
                           bg="#fde047"
-                          className="min-w-[17rem] flex flex-row text-[0.8rem] gap-2 justify-center items-center hover:text-yellow-400"
+                          className="min-w-[16rem] flex flex-row text-[0.8rem] gap-2 justify-center items-center hover:text-yellow-400"
                           onClick={() => {
                             setShowProject(true);
                             setProject(item.extendedProjectDetails);
