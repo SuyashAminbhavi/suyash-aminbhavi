@@ -118,7 +118,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="absolute inset-0 w-full h-screen">
       {/* Background layer with color transition */}
       <motion.div
         className="absolute inset-0"
@@ -235,10 +235,14 @@ export default function Home() {
         >
           {
             <main className="flex flex-col gap-8 justify-center items-center h-screen">
-              <h1 className={inter_heavy.className + " text-black text-4xl"}>
+              <h1
+                className={
+                  inter_heavy.className + " text-black text-2xl lg:text-4xl"
+                }
+              >
                 Choose an experience
               </h1>
-              <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
+              <div className="flex flex-col lg:flex-row items-center justify-center w-[20rem] h-1/2 lg:h-full lg:w-full gap-4 mx-auto px-8">
                 <Card
                   title="MINIMALISTIC"
                   titleStyle={inter_light}
