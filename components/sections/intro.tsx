@@ -1,4 +1,4 @@
-import { Tillana, Press_Start_2P, Orbitron } from "next/font/google";
+import { Tillana, Press_Start_2P } from "next/font/google";
 import Image from "next/image";
 import HeyAnim from "@/public/Hey.gif";
 import { PiLegoSmileyDuotone } from "react-icons/pi";
@@ -8,7 +8,6 @@ import { ThemeContext } from "@/contexts/themeContext";
 
 const tillana_medium = Tillana({ weight: "400", subsets: ["latin"] });
 const p2p_light = Press_Start_2P({ weight: "400", subsets: ["latin"] });
-const orbitron_light = Orbitron({ weight: "400", subsets: ["latin"] });
 
 const CARD = {
   id: 0,

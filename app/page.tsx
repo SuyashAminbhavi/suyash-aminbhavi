@@ -2,8 +2,7 @@
 
 import React, { use } from "react";
 import { useState, useEffect } from "react";
-import { Inter, Press_Start_2P, Orbitron } from "next/font/google";
-import { BsRobot } from "react-icons/bs";
+import { Inter, Press_Start_2P } from "next/font/google";
 import { SiRetroarch } from "react-icons/si";
 import { AnimatePresence, motion } from "motion/react";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
@@ -15,7 +14,6 @@ import Main from "@/components/main";
 const inter_light = Inter({ weight: "300", subsets: ["latin"] });
 const inter_heavy = Inter({ weight: "500", subsets: ["latin"] });
 const p2p_light = Press_Start_2P({ weight: "400", subsets: ["latin"] });
-const orbitron_light = Orbitron({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
   const [animationStage, setAnimationStage] = useState<
