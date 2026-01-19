@@ -513,13 +513,12 @@ export default function ProjectView({
                 <div className="flex flex-col">
                   <h1
                     className={
-                      lexend_heavy.className +
-                      " text-[1rem] text-yellow-500 leading-tight"
+                      "retroui-text text-[1rem] text-yellow-500 leading-tight"
                     }
                   >
                     Duration
                   </h1>
-                  <p className={lexend_light.className + " text-[1rem]"}>
+                  <p className={"retroui-text text-[1rem]"}>
                     {projectDuration}
                   </p>
                 </div>
@@ -534,13 +533,12 @@ export default function ProjectView({
                 <div className="flex flex-col">
                   <h1
                     className={
-                      lexend_heavy.className +
-                      " text-[1rem] text-yellow-500 leading-tight"
+                      "retroui-text text-[1rem] text-yellow-500 leading-tight"
                     }
                   >
                     Team Size
                   </h1>
-                  <p className={lexend_light.className + " text-[1rem]"}>
+                  <p className={"retroui-text text-[1rem]"}>
                     {projectTeamSize}
                   </p>
                 </div>

@@ -420,7 +420,7 @@ export const FadeInDiv = ({
                       {item.extendedProjectDetails.isProjectActive ? (
                         <Button
                           bg="#fde047"
-                          className="min-w-[16rem] flex flex-row text-[0.8rem] gap-2 justify-center items-center hover:text-yellow-400"
+                          className="lg:hidden min-w-[16rem] flex flex-row text-[0.8rem] gap-2 justify-center items-center hover:text-yellow-400"
                           onClick={() => {
                             setShowProject(true);
                             setProject(item.extendedProjectDetails);
@@ -429,7 +429,7 @@ export const FadeInDiv = ({
                           Learn More
                         </Button>
                       ) : (
-                        <div className="w-full flex flex-row gap-2 justify-center items-center hover:text-red-600">
+                        <div className="lg:hidden w-full flex flex-row gap-2 justify-center items-center hover:text-red-600">
                           <FaHourglassHalf className="w-5 h-5" />
                           <p className={p2p_light.className + " text-[0.7rem]"}>
                             Work In Progress
